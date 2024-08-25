@@ -1,0 +1,148 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    font-weight: 500;
+    overflow: hidden;
+  } 
+
+  
+  .content {
+    background-color: #000;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top:40px;
+  }
+  
+  .wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    align-items: flex-start;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .companyInfo {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+  
+  .logo {
+    aspect-ratio: 0.86;
+    object-fit: contain;
+    object-position: center;
+    width: 57px;
+  }
+  
+  .tagline {
+    margin-top: 9px;
+  }
+  
+  .footerLinks {
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap:19px;
+    
+  }
+
+  .firstSection{
+    display:flex;
+    justify-content:space-between;
+    width:100%;
+    
+  } 
+  .secondSection{
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .linkColumn {
+    display: flex;
+    flex-direction: column;
+  } 
+  .linkColumn a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .link {
+    margin-top: 16px;
+  }
+  
+  .link:first-child {
+    margin-top: 0;
+  } 
+  
+  .socialMedia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 138px;
+    max-width: 100%;
+  }
+  
+  .socialIcons {
+    aspect-ratio: 8.13;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    align-self: stretch;
+    margin-top: 10px;
+  }
+  
+  .additionalIcons {
+    aspect-ratio: 2.67;
+    object-fit: contain;
+    object-position: center;
+    width: 64px;
+    margin-top: 31px;
+  }
+  
+  .title {
+    font-size: 13px;
+  }
+
+  .list {
+      display: flex;
+      margin:0;
+      padding: 0;
+      list-style: none;
+      gap:21px;
+      
+    }
+  
+  .item {
+    line-height: 57px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .divider {
+    align-self: stretch;
+    min-height: 0;
+    opacity: 15%;
+    margin: 0;
+    width: 100%;
+    border: 0.1px solid #fff;
+  }
+  
+  .copywright {
+    font-size: 12px;
+    margin-top: 24px;
+    margin-bottom: 27px;
+  }

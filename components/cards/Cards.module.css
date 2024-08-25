@@ -1,0 +1,171 @@
+.cards {
+    padding-top: 41px;
+    font-family: "Poppins", sans-serif;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.image {
+}
+
+.cards::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.cardText {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.cardContainer {
+    padding-left: 64px;
+    padding-right: 64px;
+    display: flex;
+    gap: 22px;
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    border: 1px solid #d9d9d9;
+}
+
+.cardDescription {
+    padding: 25px 40px 26px 40px;
+}
+
+.cardHeader {
+    line-height: 42px;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.cardDetails {
+    padding-left: 2px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.cardFeatures {
+    display: flex;
+    gap: 16px;
+    margin-top: 59px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.iconText {
+    white-space: nowrap;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.lastSection {
+    display: flex;
+    align-items: end;
+    padding-top: 35px;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 16px;
+    align-self: center;
+}
+
+.booking {
+    padding: 8px 15px;
+    background-color: #e21e26;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 960px) {
+    .cards {
+        padding: 0px 17px 17px 17px;
+    }
+
+    .cardText {
+        justify-content: start;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        line-height: 24px;
+    }
+
+    .cardContainer {
+        padding: 0;
+        width: 30%;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imageContainer .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cardDescription {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .cardHeader {
+        font-size: 16px;
+    }
+
+    .cardDetails {
+        width: 100%;
+        opacity: 70%;
+        font-size: 12px;
+        max-width: 170px; /* Set the max width for each line */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limit to 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    .cardFeatures {
+        margin-top: 12px;
+        max-width: 190px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    .lastSection {
+        padding-top: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .price {
+        align-self: flex-start; /* Align individual elements to the start */
+        margin-bottom: 10px; /* Add some space between the elements */
+    }
+
+    .booking {
+        align-self: flex-start; /* Align individual elements to the start */
+        padding: 9px 32.5px;
+    }
+}

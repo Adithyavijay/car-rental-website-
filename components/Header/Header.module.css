@@ -1,0 +1,169 @@
+.navbar {
+    padding-left: 74px;
+    padding-right: 65px;
+    padding-top: 40px;
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: "poppins";
+    white-space: nowrap;
+    cursor: pointer;
+    z-index: 9999;
+}
+.options > div:not(:last-child):hover {
+    background-color: rgb(194, 185, 185);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform: scale(1.2);
+    color: blue;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcons {
+    position: absolute;
+    top: 15px;
+    right: 64px;
+    cursor: pointer;
+}
+.brand {
+    cursor: pointer;
+}
+.brand :hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.navbarText {
+    text-align: end;
+    font-size: 10px;
+    white-space: nowrap;
+    font-weight: 400;
+    opacity: 70%;
+    font-family: "poppins";
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width: 1250px) {
+    .socialIcons {
+        display: none;
+    }
+    .navbar {
+        padding: 18px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        z-index: 1;
+        max-width: 1300px;
+        padding: 0;
+    }
+    .navbarText {
+        display: none;
+    }
+    .options {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 50%; /* Ensure full width */
+        padding-left: 33px; /* Consistent padding */
+        position: fixed;
+        top: 80px;
+        right: -1000px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        height: 80vh;
+        transition: all 0.3s ease-in;
+        box-sizing: border-box;
+        transition: all 0.5s ease-in;
+        z-index: 1000;
+    }
+    .options > div:not(:last-child) {
+        box-sizing: border-box;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-right: 30px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .options > div:not(:last-child):hover {
+        /* Disable transform and transition on smaller screens */
+        display: flex;
+        justify-content: center;
+        background-color: rgb(194, 185, 185);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: none;
+        transition: none;
+        box-shadow: none;
+    }
+
+    .user {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    .options.active {
+        color: black;
+        width: 50%;
+        padding-left: 33px;
+        background-color: white;
+        top: 80px;
+        position: fixed;
+        right: 0;
+        font-weight: 500;
+        font-size: 14px;
+        opacity: 1;
+        transition: all 0.3s ease;
+        z-index: 9999;
+        height: 80vh;
+        gap: 10px;
+        transition: all 0.5s ease-in;
+    }
+    .options .active :hover {
+        background-color: blue;
+    }
+    .options .bellIcon {
+        display: none;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: black;
+        display: block;
+        cursor: pointer;
+    }
+
+    .isActive .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .isActive .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .isActive .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbarToggle {
+        cursor: pointer;
+    }
+}

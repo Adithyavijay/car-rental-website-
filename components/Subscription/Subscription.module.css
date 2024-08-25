@@ -1,0 +1,319 @@
+/* styles.module.css */
+
+.subscriptionContainer {
+    padding: 40px 64px 40px 142px;
+    display: flex;
+    font-family: "Poppins";
+    box-sizing: border-box;
+}
+
+.menuOne {
+    width: 48%;
+    padding-right: 120px;
+    box-sizing: border-box;
+}
+
+.menuTwo {
+    width: 52%;
+    box-sizing: border-box;
+    background-color: #e21e26;
+    color: white;
+    display: flex;
+    padding: 48px 70px 41px 71px;
+}
+
+.heading {
+    padding-top: 38px;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 51px;
+}
+
+.inputGroup {
+    padding-top: 41px;
+    display: flex;
+    gap: 17px;
+    margin-right: 12px;
+}
+
+.inputField {
+    padding: 13px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    background-color: #f8f8f8;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Poppins";
+    line-height: 18px;
+}
+
+.text {
+    padding-top: 16px;
+    padding-bottom: 40px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.button {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    background-color: #e21e26;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    font-family: "Poppins";
+    cursor: pointer;
+}
+
+.descContainer {
+}
+
+.headText {
+    padding-top: 77px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.inputContainer {
+    padding-top: 12px;
+    padding-bottom: 19px;
+    width: 100%;
+}
+
+.fullWidthInput {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 22px;
+    font-family: "Poppins";
+    font-size: 14px;
+}
+
+.buttonContainer {
+    display: flex;
+    color: white;
+    font-size: 14px;
+    font-family: "Poppins";
+}
+
+.blackButton {
+    background-color: black;
+    padding: 12px 35px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.appLinks {
+    padding-top: 45px;
+}
+
+.appLinksText {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.linkGroup {
+    padding-top: 13px;
+    display: flex;
+    gap: 8px;
+}
+
+.linkItem {
+    display: flex;
+    border: 1px solid white;
+    border-radius: 25px;
+    gap: 6px;
+    padding: 2px 12px 2px 16px;
+    align-items: center;
+    line-height: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.error {
+    font-size: 12px;
+    color: #e21e26;
+}
+
+.mobile {
+    display: none;
+} 
+@media screen and (max-width:1260px){
+    .imageContainer{
+        padding-top: 60px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .subscriptionContainer {
+        padding-top: 20px;
+        padding-left: 16px;
+        padding-right: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+
+    .menuOne {
+        padding: 0;
+        padding-bottom: 17px;
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        padding-top: 0;
+        padding-right: 117px;
+    }
+
+    .inputGroup {
+        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inputField {
+        width: 95%;
+    }
+
+    .text {
+        padding-bottom: 16px;
+    }
+
+    .button {
+        width: 40%;
+        padding: 9px 31px;
+    }
+
+    .menuTwo {
+        width: 100%;
+        padding: 0 150px;
+        padding-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 136px;
+        height: 245px;
+        padding-right: 16px;
+        padding-top: 0!important;
+    }
+
+    .descContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headText {
+        display: none;
+    }
+
+    .mobileText {
+        display: block;
+        order: 2;
+        font-size: 11px;
+        padding-top: 60px;
+        line-height: 15.6px;
+        max-width: 170px;
+        font-weight: 500px;
+    }
+
+    .inputContainer {
+        display: none;
+    }
+
+    .appLinks {
+        order: 1;
+        padding-top: 11px;
+    }
+
+    .linkGroup {
+        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 54%;
+        opacity: 100%;
+    }
+
+    .linkItem {
+        width: 100%;
+        padding-right: 20px;
+    }
+
+    .buttonContainer {
+        display: none;
+    }
+
+    .fullWidthInput {
+        display: block;
+        flex-basis: 100%;
+        box-sizing: border-box;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    .blackButton {
+        padding: 9px 26px 10px 26px;
+        font-size: 13px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor:pointer;
+    }
+    .mobileInputBox {
+        display: block;
+        flex-basis: 100%;
+        box-sizing: border-box;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+    .mobileButton {
+        padding-left: 16px;
+        padding-bottom: 24px;
+        display: block;
+        font-family: "poppins";
+    }
+
+    .btn {
+        padding: 9px 26px 10px 26px;
+        font-size: 13px;
+        font-family: "poppins";
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .mobileInputBox input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 14px 0px 13px 16px;
+        border-radius: 5px;
+        border: none;
+    }
+} 
+@media screen and (max-width:650px){
+    .menuTwo{
+        justify-content: flex-start;
+        padding: 0;
+    }
+}

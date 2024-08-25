@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  width: 188px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding: 11px 40px;
+  font-family: 'poppins';
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.calenderIcon {
+  position: absolute;
+  left: 16px;
+}
+
+.buttonText {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.input {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  background-color: #F6F7F9;
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: white;
+  z-index: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}

@@ -1,0 +1,217 @@
+.container {
+    padding-left: 81px;
+    padding-top: 33px;
+    background-image: url("/images/bookingBanner.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: "poppins";
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 64px;
+    padding-bottom: 35px;
+    border-radius: 20px;
+}
+.menu {
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+}
+
+.top > div {
+    cursor: pointer;
+}
+
+.pickup {
+    opacity: 70%;
+    font-family: "poppins";
+    text-decoration-color: white;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.dropoff {
+    opacity: 70%;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "poppins";
+}
+
+.active {
+    opacity: 100%;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-color: white;
+}
+.vehicleType {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 5px;
+    border-radius: 14px;
+    font-weight: 300;
+    color: white;
+    border: none;
+    font-family: "poppins";
+    font-size: 14px;
+    cursor: pointer;
+}
+.vehicleType option {
+    color: black; /* Color of the text in the dropdown options */
+}
+
+.locationContainer {
+    position: relative;
+    display: inline-block;
+    width: 188px; /* Adjust the width as needed */
+    z-index: 100;
+    position: relative;
+}
+
+.locationSelect {
+    width: 100%;
+    padding: 12px 40px 12px 40px;
+    border-radius: 20px;
+    font-weight: 500;
+    border: none;
+    background-color: rgba(
+        255,
+        255,
+        255,
+        1
+    ); /* White background with 80% opacity */
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: black; /* Text color */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("/icons/location.svg"),
+        url("/icons/down arrow location.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 15px center, right 15px center;
+    background-size: 10px, 7px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+.middle {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.divider {
+    border-right: 1px solid white;
+    height: 42px;
+}
+.quickbook {
+    padding: 10px 5%;
+    border: solid 1px;
+    border-radius: 18px;
+
+    margin: 0;
+    height: auto;
+    display: flex;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.quickbook span {
+    white-space: nowrap;
+}
+
+.bottom {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+}
+
+.iconGroup {
+    display: flex;
+    gap: 19px;
+}
+.bottomText {
+    font-size: 14px;
+    font-weight: 300;
+    font-family: "poppins";
+    line-height: 21px;
+}
+
+.phone {
+    position: absolute;
+    right: 0;
+}
+
+.whiteBackground {
+    position: absolute;
+    right: 0;
+    top: 224px;
+}
+
+.twentyfour {
+    position: absolute;
+    right: 5px;
+    top: 227px;
+}
+
+.mobileViews {
+    display: none;
+}
+
+@media screen and (max-width: 970px) {
+    .mobileViews {
+        display: block;
+    }
+    .container {
+        overflow-x: hidden;
+        margin: 0 16px;
+        padding-top: 16px;
+        padding-left: 38px;
+        padding-right: 38px;
+        padding-bottom: 19px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top {
+        display: none;
+    }
+    .middle {
+        display: none;
+    }
+    .bottom {
+        font: 500 13px/16px Poppins, sans-serif;
+        color: #fff;
+        border-radius: 20px;
+        display: flex;
+        gap: 18px;
+        flex-direction: column; /* Stack text and icons vertically */
+        order: 1; /* Place this at the top */
+    }
+
+    .bottomText {
+        font-size: 13px;
+        font-weight: 500;
+        text-align: center;
+        max-width: 251px;
+        line-height: 16px;
+    }
+    .phone {
+        top: 130px;
+    }
+    .whiteBackground {
+        top: 174px;
+    }
+    .twentyfour {
+        top: 177px;
+    }
+}

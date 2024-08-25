@@ -1,0 +1,85 @@
+.banner {
+    padding-left: 64px;
+    padding-right: 64px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 1;
+  }
+  
+  .image, .mobImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: slideAnimation 15s infinite;
+  }
+  
+  .mobImage {
+    display: none;
+  }
+  
+  .mobile {
+    display: none;
+  }
+  
+  @keyframes slideAnimation {
+    0%, 26.66% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    33.33%, 100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  @media screen and (max-width: 970px) {
+    .banner {
+      padding: 0;
+      margin: 0;
+      padding-bottom: 24px;
+    }
+  
+    .imageWrapper {
+      height: auto;
+      aspect-ratio: 699.73 / 216;  /* Match the aspect ratio of your mobile image */
+    }
+  
+    .desktop {
+      display: none;
+    }
+  
+    .image {
+      display: none;
+    }
+  
+    .mobile {
+      display: block;
+    }
+  
+    .mobImage {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;  /* This ensures the entire image is visible */
+    }
+  }
