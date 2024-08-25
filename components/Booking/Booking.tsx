@@ -54,6 +54,17 @@ const Booking = () => {
                                 <option value={styles.option4}>Marina</option>
                             </select>
                         </div>
+                   { activeItem==='dropoff'  &&
+                   <div className={styles.locationContainer} >
+                   <select className={styles.locationSelect}>
+                       <option value={styles.option1} selected>
+                           Al Quoz
+                       </option>
+                       <option value={styles.option2}>Deira</option>
+                       <option value={styles.option3}>Jumeirah</option>
+                       <option value={styles.option4}>Marina</option>
+                   </select>
+               </div> }     
                         {/* date time input box */}
 
                         <DateTimeButton />

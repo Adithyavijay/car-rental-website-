@@ -58,7 +58,7 @@
   
     .imageWrapper {
       height: auto;
-      aspect-ratio: 699.73 / 216;  /* Match the aspect ratio of your mobile image */
+      aspect-ratio: 3/2;  /* Match the aspect ratio of your mobile image */
     }
   
     .desktop {

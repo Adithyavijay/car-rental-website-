@@ -3,7 +3,7 @@ import styles from "./Subscription.module.css";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import { useState } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 interface userInfo {
     name: string;
@@ -12,16 +12,19 @@ interface userInfo {
 interface Errors {
     name?: string;
     email?: string;
+    phoneNumber?:string;
 }
 
-const SubscriptionSection: React.FC = () => { 
-
+const SubscriptionSection: React.FC = () => {
     const [inputVal, setInputVal] = useState<userInfo>({
         name: "",
         email: "",
     });
-    const isMobile= useMediaQuery('(max-width:1260px)')
+
+    const [number, setNumber] = useState<number | null>(null);
+    const isMobile = useMediaQuery("(max-width:1260px)");
     const [errors, setErrors] = useState<Errors>({});
+    const [phoneNumber, setPhoneNumber] = useState<string>("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputVal((prev) => ({
@@ -33,16 +36,42 @@ const SubscriptionSection: React.FC = () => {
             [e.target.name]: "",
         }));
     };
+    const handlePhoneNumberChange = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        const value = e.target.value.replace(/\D/g, "");
+        setPhoneNumber(value);
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            phoneNumber: "",
+        }));
+    };
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         console.log("button clicked");
         const validationErrors: Errors = validate(inputVal);
         if (Object.keys(validationErrors).length === 0) {
             setErrors({});
-            toast.success('user subscribed')
+            toast.success("user subscribed");
         } else {
             setErrors(validationErrors);
-            toast.error('error subscribing')
+            toast.error("error subscribing");
+        }
+    };
+    const handleGetLink = () => {
+        if (phoneNumber.length !== 10) {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                phoneNumber: "Phone number must be 10 digits",
+            }));
+            toast.error("Invalid phone number");
+        } else {
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                phoneNumber: "",
+            }));
+            toast.success("Link sent successfully");
+            // Here you would typically send the link to the provided phone number
         }
     };
 
@@ -62,7 +91,9 @@ const SubscriptionSection: React.FC = () => {
 
     return (
         <div className={styles.subscriptionContainer}>
-            <div><Toaster/></div>
+            <div>
+                <Toaster />
+            </div>
             {/* left section */}
             <div className={styles.menuOne}>
                 <div className={styles.heading}>
@@ -103,24 +134,28 @@ const SubscriptionSection: React.FC = () => {
             </div>
             {/* right section */}
             <div className={styles.menuTwo}>
-             {  isMobile ? (  <div className={`${styles.imageContainer} `}>
-                    <Image
-                        src="./images/Rectangle.svg"
-                        id="Image"
-                        alt=""
-                        width={154}
-                        height={263}
-                    />
-                </div>) : (<div className={`${styles.imageContainer}`}>
-                    <Image
-                        src="./images/Rectangle fon.svg"
-                        id="Image"
-                        alt=""
-                        width={231}
-                        height={417}
-                    />
-                </div> ) }   
-               
+                {isMobile ? (
+                    <div className={`${styles.imageContainer} `}>
+                        <Image
+                            src="./images/Rectangle.svg"
+                            id="Image"
+                            alt=""
+                            width={154}
+                            height={263}
+                        />
+                    </div>
+                ) : (
+                    <div className={`${styles.imageContainer}`}>
+                        <Image
+                            src="./images/Rectangle fon.svg"
+                            id="Image"
+                            alt=""
+                            width={231}
+                            height={417}
+                        />
+                    </div>
+                )}
+
                 <div className={styles.descContainer}>
                     <div className={styles.headText}>
                         Enter your number and receive <br />a direct link to
@@ -135,11 +170,17 @@ const SubscriptionSection: React.FC = () => {
                             className={styles.fullWidthInput}
                             type="text"
                             placeholder="Enter the phone number"
+                            value={phoneNumber}
+                            onChange={handlePhoneNumberChange}
+                            maxLength={10}
                         />
                     </div>
-                    <div className={styles.buttonContainer} >
-                        <div className={styles.blackButton}>Get the link</div>
+                    <div className={styles.buttonContainer}>
+                        <div className={styles.blackButton} onClick={handleGetLink}>Get the link</div>
                     </div>
+                    {errors.phoneNumber && (
+                            <div style={{color:'white'}} className={styles.error}>{errors.phoneNumber}</div>
+                        )}
                     <div className={styles.appLinks}>
                         <p className={styles.appLinksText}>Get it on</p>
                         <div className={styles.linkGroup}>

@@ -3,7 +3,7 @@
     padding-right: 65px;
     padding-top: 40px;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     z-index: 1000;
 }
 
@@ -56,8 +56,9 @@
     font-family: "poppins";
     padding-bottom: 5px;
 }
+@media screen and (max-width: 1250px) { 
 
-@media screen and (max-width: 1250px) {
+  
     .socialIcons {
         display: none;
     }
@@ -84,7 +85,7 @@
         margin: 0;
         width: 50%; /* Ensure full width */
         padding-left: 33px; /* Consistent padding */
-        position: fixed;
+        position: absolute;
         top: 80px;
         right: -1000px;
         opacity: 0;
@@ -94,6 +95,7 @@
         box-sizing: border-box;
         transition: all 0.5s ease-in;
         z-index: 1000;
+        overflow-y: auto;
     }
     .options > div:not(:last-child) {
         box-sizing: border-box;
@@ -113,8 +115,13 @@
         transform: none;
         transition: none;
         box-shadow: none;
-    }
-
+    } 
+ 
+.options::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+    
+   
     .user {
         padding-top: 10px;
         padding-bottom: 30px;

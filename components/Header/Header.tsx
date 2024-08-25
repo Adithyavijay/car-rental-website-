@@ -24,12 +24,27 @@ const Header: React.FC = () => {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, []); 
+   
+    
+    useEffect(() => {
+        if (isActive) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'visible';
+        }
+
+        return () => {
+            
+        };
+    }, [isActive]);
+
 
     const handleClick = () => {
-        setIsActive((prev) => !prev);
-    };
-
+        setIsActive((prev) => !prev); 
+      
+    }; 
+ 
     return (
         <div className={styles.navbar}>
             <div className={styles.container}>
