@@ -45,8 +45,8 @@ const Booking = () => {
                     {/* middle section */}
                     <div className={styles.middle}>
                         <div className={styles.locationContainer}>
-                            <select className={styles.locationSelect}>
-                                <option value={styles.option1} selected>
+                            <select className={styles.locationSelect} defaultValue={styles.opton1}>
+                                <option value={styles.option1} >
                                     Al Quoz
                                 </option>
                                 <option value={styles.option2}>Deira</option>
@@ -56,8 +56,8 @@ const Booking = () => {
                         </div>
                    { activeItem==='dropoff'  &&
                    <div className={styles.locationContainer} >
-                   <select className={styles.locationSelect}>
-                       <option value={styles.option1} selected>
+                  <select className={styles.locationSelect} defaultValue={styles.opton1}>
+                       <option value={styles.option1} >
                            Al Quoz
                        </option>
                        <option value={styles.option2}>Deira</option>

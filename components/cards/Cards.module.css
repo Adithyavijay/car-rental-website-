@@ -91,7 +91,30 @@
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    position: relative;
 }
+.booking::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+    color: white;
+    z-index: 0;
+    mix-blend-mode: screen;
+  } 
+
+  .booking:hover {
+    color: #fff;
+  }
+  
+  .booking:hover:after {
+    width: 100%;
+  }
 
 @media screen and (max-width: 960px) {
     .cards {

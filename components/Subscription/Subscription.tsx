@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import styles from "./Subscription.module.css";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -179,7 +180,7 @@ const SubscriptionSection: React.FC = () => {
                         <div className={styles.blackButton} onClick={handleGetLink}>Get the link</div>
                     </div>
                     {errors.phoneNumber && (
-                            <div style={{color:'white'}} className={styles.error}>{errors.phoneNumber}</div>
+                            <div style={{color:'white'}} className={styles.error+" "+styles.desktop}>{errors.phoneNumber}</div>
                         )}
                     <div className={styles.appLinks}>
                         <p className={styles.appLinksText}>Get it on</p>
@@ -235,11 +236,16 @@ const SubscriptionSection: React.FC = () => {
                 </div>
                 {/* mobile view  */}
                 <div className={styles.mobileInputBox + " " + styles.mobile}>
-                    <input type="text" placeholder="Enter phone number" />
+                    <input type="text" placeholder="Enter phone number"  value={phoneNumber}
+                            onChange={handlePhoneNumberChange}
+                            maxLength={10}/>
                 </div>
                 <div className={`${styles.mobileButton} ${styles.mobile}`}>
-                    <button className={styles.btn}>Get the link</button>
+                    <button className={styles.btn}  onClick={handleGetLink}><span>Get the link</span></button>
                 </div>
+                {errors.phoneNumber && (
+                            <div style={{color:'white',marginLeft:'5px',paddingTop:'5px'}} className={styles.error+" "+styles.mobile}>{errors.phoneNumber}</div>
+                        )}
             </div>
         </div>
     );

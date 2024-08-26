@@ -9,23 +9,7 @@ const Header: React.FC = () => {
     const [active, setActive] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const isMobile = useMediaQuery('(max-width: 550px)');
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth <= 1250) {
-                setActive((prev) => !prev);
-            } else {
-                setActive((prev) => !prev);
-            }
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []); 
-   
+    const smallScreen = useMediaQuery('(max-width:1250px')
     
     useEffect(() => {
         if (isActive) {
@@ -40,10 +24,14 @@ const Header: React.FC = () => {
     }, [isActive]);
 
 
+
     const handleClick = () => {
-        setIsActive((prev) => !prev); 
-      
-    }; 
+        if (smallScreen) {
+            setIsActive((prev) => !prev);
+        }
+    };
+
+  
  
     return (
         <div className={styles.navbar}>

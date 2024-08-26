@@ -65,7 +65,31 @@
     width: 100%;
     font-family: "Poppins";
     cursor: pointer;
+    position: relative;
 }
+.button::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s ease-in;
+    border-radius: 4px;
+    color: white;
+    z-index: 0;
+    mix-blend-mode: screen;
+  } 
+
+  .button:hover {
+    color: #fff;
+  }
+  
+  .button:hover:after {
+    width: 100%;
+    transition: all 0.35s ease-in;
+  }
 
 .descContainer {
 }
@@ -107,7 +131,34 @@
     padding: 12px 35px;
     border-radius: 8px;
     cursor: pointer;
-}  
+    position: relative;
+    color: white;
+    z-index: 10;
+}    
+
+.blackButton::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+    color: white;
+    z-index: 0;
+    mix-blend-mode: screen;
+  } 
+
+  .blackButton:hover {
+    color: #fff;
+  }
+  
+  .blackButton:hover:after {
+    width: 100%;
+  }
+  
 
 
 .appLinks {
@@ -151,7 +202,10 @@
     }
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 970px) { 
+    .desktop{
+        display: none;
+    }
     .subscriptionContainer {
         padding-top: 20px;
         padding-left: 16px;
