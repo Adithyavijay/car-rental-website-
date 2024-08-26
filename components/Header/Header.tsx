@@ -8,22 +8,18 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 const Header: React.FC = () => {
     const [active, setActive] = useState(false);
     const [isActive, setIsActive] = useState(false);
-    const isMobile = useMediaQuery('(max-width: 550px)');
-    const smallScreen = useMediaQuery('(max-width:1250px')
-    
+    const isMobile = useMediaQuery("(max-width: 550px)");
+    const smallScreen = useMediaQuery("(max-width:1250px");
+
     useEffect(() => {
         if (isActive) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = 'visible';
+            document.body.style.overflow = "visible";
         }
 
-        return () => {
-            
-        };
+        return () => {};
     }, [isActive]);
-
-
 
     const handleClick = () => {
         if (smallScreen) {
@@ -31,23 +27,25 @@ const Header: React.FC = () => {
         }
     };
 
-  
- 
     return (
         <div className={styles.navbar}>
             <div className={styles.container}>
                 <div className={styles.brand}>
-                {isMobile ?( <Image
-                        src="/icons/car brand mobile.svg"
-                        alt="Logo"
-                        width={155.94}
-                        height={23.6}
-                    /> ):( <Image
-                        src="/icons/carRental.svg"
-                        alt="Logo"
-                        width={355}
-                        height={52}
-                    /> ) }    
+                    {isMobile ? (
+                        <Image
+                            src="/icons/car brand mobile.svg"
+                            alt="Logo"
+                            width={155.94}
+                            height={23.6}
+                        />
+                    ) : (
+                        <Image
+                            src="/icons/carRental.svg"
+                            alt="Logo"
+                            width={355}
+                            height={52}
+                        />
+                    )}
                 </div>
                 <div
                     className={`${styles.navbarToggle} ${
